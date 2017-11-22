@@ -2,11 +2,11 @@
 Sistema de criação de conta e login o seguinte enunciado:
 - identificação - colocar regras de identificação de nomes, não permitir controle de id iguais.
 - autenticação - o sistema após receber o pré-cadastro deverá enviar através de e-mail o login (identificação) escolhida com a senha (autenticação) do primeiro acesso. Atenção esta senha deverá ser criada pelo próprio sistema de forma randomica.
-O acesso deve ser realizado em X tempo caso contrário o login e senha serão cancelados.
-O usuário deverá inserir nova senha de acesso, sendo que ao salvar a senha de acesso esta deverá ter caracteres numéricos e alfa numéricos (controle para baixa, média e alta complexidade).
-Senha deve ser criptografada ( pesquisar qual algoritmo de hash confiável).
-Esquecimento de senha: apenas enviar por e-mail e novamente inicia o mesmo processo de senha pela primeira vez, porém o login desta vez não será cancelado.
-O sistema deverá expirar a senha depois de X tempo: não poderá ser a mesma senha (hash identifica) o sistema deve apresentar campos "Senha atual" "Nova senha" e "confirme Nova Senha".
+- O acesso deve ser realizado em X tempo caso contrário o login e senha serão cancelados.
+- O usuário deverá inserir nova senha de acesso, sendo que ao salvar a senha de acesso esta deverá ter caracteres numéricos e alfa numéricos (controle para baixa, média e alta complexidade).
+- Senha deve ser criptografada ( pesquisar qual algoritmo de hash confiável).
+- Esquecimento de senha: apenas enviar por e-mail e novamente inicia o mesmo processo de senha pela primeira vez, porém o login desta vez não será cancelado.
+- O sistema deverá expirar a senha depois de X tempo: não poderá ser a mesma senha (hash identifica) o sistema deve apresentar campos "Senha atual" "Nova senha" e "confirme Nova Senha".
 
 Linguagem:
 - Java (JSP/Servlet)
