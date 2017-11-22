@@ -1,7 +1,7 @@
 # loginseginfo
 Sistema de criação de conta e login o seguinte enunciado:
-identificação - colocar regras de identificação de nomes, não permitir controle de id iguais.
-autenticação - o sistema após receber o pré-cadastro deverá enviar através de e-mail o login (identificaçã) escolhida com a senha (autenticação) do primeiro acesso. Atenção esta senha deverá ser criada pelo próprio sistema de forma randomica.
+- identificação - colocar regras de identificação de nomes, não permitir controle de id iguais.
+- autenticação - o sistema após receber o pré-cadastro deverá enviar através de e-mail o login (identificação) escolhida com a senha (autenticação) do primeiro acesso. Atenção esta senha deverá ser criada pelo próprio sistema de forma randomica.
 O acesso deve ser realizado em X tempo caso contrário o login e senha serão cancelados.
 O usuário deverá inserir nova senha de acesso, sendo que ao salvar a senha de acesso esta deverá ter caracteres numéricos e alfa numéricos (controle para baixa, média e alta complexidade).
 Senha deve ser criptografada ( pesquisar qual algoritmo de hash confiável).
