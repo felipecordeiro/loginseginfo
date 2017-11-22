@@ -8,6 +8,9 @@ Senha deve ser criptografada ( pesquisar qual algoritmo de hash confiável).
 Esquecimento de senha: apenas enviar por e-mail e novamente inicia o mesmo processo de senha pela primeira vez, porém o login desta vez não será cancelado.
 O sistema deverá expirar a senha depois de X tempo: não poderá ser a mesma senha (hash identifica) o sistema deve apresentar campos "Senha atual" "Nova senha" e "confirme Nova Senha".
 
+Linguagem:
+- Java (JSP/Servlet)
+
 Ferramentas: 
 - Eclipse Java EE
 - Banco de dados MariaDB
