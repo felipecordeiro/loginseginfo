@@ -17,9 +17,9 @@ Servidor:
 - Apache Tomcat 7.0.82
 
 Portas:
-  Tomcat admin port - 8005
-  HTTP/1.1 - 8080
-  AJP/1.3 - 8009
+- Tomcat admin port - 8005
+- HTTP/1.1 - 8080
+- AJP/1.3 - 8009
 
 Script da criação da tabela de usuário:
 
