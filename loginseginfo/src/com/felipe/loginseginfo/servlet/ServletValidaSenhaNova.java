@@ -45,21 +45,21 @@ public class ServletValidaSenhaNova extends HttpServlet {
 		// se senha atual for igual a senha nova ou senha atual for igual senha do campo
 		// 'confirme nova senha'...
 		if (senhaAtual.equals(senhaNova) || senhaAtual.equals(senhaNova2)) {
-			mensagem1 = "'senha atual' e 'nova senha' est„o iguais!";
+			mensagem1 = "'senha atual' e 'nova senha' est√£o iguais!";
 			rd = request.getRequestDispatcher("nova-senha.jsp");
 			request.setAttribute("mensagem1", mensagem1);
 			request.setAttribute("x", x);
 			rd.include(request, response);
-			// se a nova senha n„o for igual ao campo 'confirme nova senha'...
+			// se a nova senha n√£o for igual ao campo 'confirme nova senha'...
 		} else {
 			if (!senhaNova.equals(senhaNova2)) {
-				mensagem1 = "'nova senha' e 'confirme nova senha' est„o diferentes!";
+				mensagem1 = "'nova senha' e 'confirme nova senha' est√£o diferentes!";
 				rd = request.getRequestDispatcher("nova-senha.jsp");
 				request.setAttribute("mensagem1", mensagem1);
 				request.setAttribute("x", x);
 				rd.include(request, response);
 			} else {
-				// se a nova senha for forte e a nova senha n„o existir no banco de dados ent„o altera a senha com sucesso
+				// se a nova senha for forte e a nova senha n√£o existir no banco de dados ent√£o altera a senha com sucesso
 				UtilidadesSenha u = new UtilidadesSenha();
 				if (u.senhaForte(senhaNova) && !dao.existeSenha(senhaNova)) {
 					dao.alteraSenhaComSenha(senhaAtual, senhaNova);
@@ -72,11 +72,11 @@ public class ServletValidaSenhaNova extends HttpServlet {
 					request.setAttribute("mensagem1", mensagem1);
 					request.setAttribute("x", x);
 					rd.include(request, response);
-					// ent„o volta para nova-senha.jsp sem fazer nada
+					// ent√£o volta para nova-senha.jsp sem fazer nada
 				} else {
 					mensagem1 = "Senha fraca! Digite uma senha com pelo menos "
-							+ "1 letra mai˙scula, 2 letras min˙sculas, 2 n√∫meros, "
-							+ "1 caracter especial e mÌnimo de 6 caracteres";
+							+ "1 letra mai√∫scula, 2 letras min√∫sculas, 2 n√∫meros, "
+							+ "1 caracter especial e m√≠nimo de 6 caracteres";
 					rd = request.getRequestDispatcher("nova-senha.jsp");
 					request.setAttribute("mensagem1", mensagem1);
 					request.setAttribute("x", x);
