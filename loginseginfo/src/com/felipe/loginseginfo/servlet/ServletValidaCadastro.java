@@ -45,21 +45,21 @@ public class ServletValidaCadastro extends HttpServlet {
 		RequestDispatcher rd = null;
 		// se existir esse email...
 		if (dao.existeEmail(email)) {
-			mensagem1 = "E-mail j· est· sendo usado!";
+			mensagem1 = "E-mail j√° est√° sendo usado!";
 			rd = request.getRequestDispatcher("index.jsp");
 			request.setAttribute("mensagem1", mensagem1);
 			rd.include(request, response);
 		} else if (dao.existeLogin(login)) {
-			// se n„o se existir esse login...
-			mensagem1 = "Login j· est· sendo usado!";
+			// se n√£o se existir esse login...
+			mensagem1 = "Login j√° est√° sendo usado!";
 			rd = request.getRequestDispatcher("index.jsp");
 			request.setAttribute("mensagem1", mensagem1);
 			rd.include(request, response);
 		} else {
-			// se n„o, grava no banco o email, login, hash SHA-256 da senha e seta o
-			// campo 'verificado' como 0 = conta de primeiro acesso tempor·ria de 10
-			// minutos de duraÁ„o
-			// envia html email com os dados da conta e link para alteraÁ„o de senha
+			// se n√£o, grava no banco o email, login, hash SHA-256 da senha e seta o
+			// campo 'verificado' como 0 = conta de primeiro acesso tempor√°ria de 10
+			// minutos de dura√ß√£o
+			// envia html email com os dados da conta e link para altera√ß√£o de senha
 			Usuario usuario = new Usuario();
 			UtilidadesSenha u = new UtilidadesSenha();
 			usuario.setEmail(email);
@@ -67,13 +67,13 @@ public class ServletValidaCadastro extends HttpServlet {
 			usuario.setVerificado(0);
 			usuario.setSenha(u.geraRandom());
 			dao.adiciona(usuario);
-			// Deleta a conta se a senha da mesma n„o for alterada para uma senha definitiva
-			// dentro de 10 minutos
+			// Deleta a conta se a senha da mesma n√£o for alterada para uma senha definitiva
+			// dentro de 2 minutos
 			new ThreadCronometro(usuario.getLogin(), 120000);
 			System.out.println("Login " + usuario.getLogin() + " registrado");
 			EnviarEmail enviaEmail = new EnviarEmail();
 			enviaEmail.enviaEmailPrimeiroAcesso(usuario.getEmail(), usuario.getLogin(), usuario.getSenha());
-			mensagem1 = "Email enviado com sucesso, verifique sua caixa de entrada e clique no link para alterar a sua senha tempor·ria";
+			mensagem1 = "Email enviado com sucesso, verifique sua caixa de entrada e clique no link para alterar a sua senha tempor√°ria";
 			rd = request.getRequestDispatcher("index.jsp");
 			request.setAttribute("mensagem1", mensagem1);
 			rd.include(request, response);
