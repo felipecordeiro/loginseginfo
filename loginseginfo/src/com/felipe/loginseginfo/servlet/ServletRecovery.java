@@ -42,21 +42,22 @@ public class ServletRecovery extends HttpServlet {
 		String login = request.getParameter("login");
 		UsuarioDao dao = new UsuarioDao();
 		RequestDispatcher rd = null;
-		// se n„o existir esse email ou n„o existir esse login...
+		// se n√£o existir esse email ou n√£o existir esse login...
 		if (!dao.existeEmail(email) || !dao.existeLogin(login)) {
-			mensagem1 = "E-mail e/ou login inv·lidos!";
+			mensagem1 = "E-mail e/ou login inv√°lidos!";
 			rd = request.getRequestDispatcher("recovery.jsp");
 			request.setAttribute("mensagem1", mensagem1);
 			rd.include(request, response);
 		} else {
-			// se n„o, altera a senha no banco e envia html email para o email dado como
-			// par‚metro
+			// se n√£o, altera a senha no banco e envia html email para o email dado como
+			// par√¢metro
 			Usuario usuario = new Usuario();
 			UtilidadesSenha u = new UtilidadesSenha();
 			usuario.setEmail(email);
 			usuario.setLogin(login);
 			usuario.setSenha(u.geraRandom());
-			dao.alteraSenhaComLogin(login, usuario.getSenha());
+			dao.alteraSenhaComLogin(usuario.getLogin(), usuario.getSenha());
+			dao.alteraVerificado(usuario.getSenha(), 0);
 			EnviarEmail enviaEmail = new EnviarEmail();
 			enviaEmail.enviaEmailRecovery(usuario.getEmail(), usuario.getLogin(), usuario.getSenha());
 			mensagem1 = "Email enviado com sucesso, verifique sua caixa de entrada";
