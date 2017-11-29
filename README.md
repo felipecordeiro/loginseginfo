@@ -27,24 +27,40 @@ Portas:
 Script da criação da tabela de usuário:
 
   create database seginfo;
-
   use seginfo;
-
+  
   create table usuario (
-
+  
   id int not null auto_increment,
-
+  
   email varchar(50) unique not null,
-
+  
   login varchar(20) unique not null,
-
+  
   senha char(64) unique not null,
-
+  
   verificado int not null,
-
+  
   dataCadastro date not null,
-
+  
   primary key (id))
+  
+  select * from usuario;
 
+![registro](https://user-images.githubusercontent.com/18239321/33363112-26002db4-d4c6-11e7-990f-7db66bb3cd3a.PNG)
 
-select * from usuario;
+![entrar](https://user-images.githubusercontent.com/18239321/33363136-3cff43a6-d4c6-11e7-9435-e45fa78250f9.PNG)
+
+![emailenviado](https://user-images.githubusercontent.com/18239321/33363143-42c04c22-d4c6-11e7-8fb0-280b794148aa.PNG)
+
+![respostaemail](https://user-images.githubusercontent.com/18239321/33363156-4e0b573e-d4c6-11e7-82e2-734c16365222.PNG)
+
+![usuariobd](https://user-images.githubusercontent.com/18239321/33363151-4a1d0d16-d4c6-11e7-9dd2-6edecaf7d34a.PNG)
+
+![senhafraca](https://user-images.githubusercontent.com/18239321/33363180-586bd2e4-d4c6-11e7-8820-ce6e9200c089.PNG)
+
+![novasenha](https://user-images.githubusercontent.com/18239321/33363175-541f5fe4-d4c6-11e7-82a6-1450f171b788.PNG)
+
+![senhaforte](https://user-images.githubusercontent.com/18239321/33363184-5cb8852c-d4c6-11e7-8ea0-5fe34de54cfe.PNG)
+
+![verificado](https://user-images.githubusercontent.com/18239321/33363549-f4eb0b48-d4c7-11e7-9392-f037801d63f1.PNG)
